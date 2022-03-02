@@ -1,0 +1,5 @@
+torch=1.6.0
+torchvision=0.7.0
+seaborn
+torchtext==0.7.0
+git+https://github.com/erikavaris/tokenizer.git
