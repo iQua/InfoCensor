@@ -5,7 +5,7 @@ This codebase is written on top of pytorch
 
 Some required packages are listed in requirement.txt
 
-# Datasets
+## Datasets
 ### German
 The .csv file in german_data directory
 ### Health Heritage
@@ -19,7 +19,7 @@ pip install git+https://github.com/erikavaris/tokenizer.git
 You also need torchtext (find the version that matches your torch version)
 
 
-# Baselines without defense (code files are in the "defenses" directory)
+## Baselines without defense (code files are in the "defenses" directory)
 
 ```commandline
 python no_defense.py --dataset <dataset> --target-attr <the target attribute> --sensitive-attr <the sensitive attribute>
