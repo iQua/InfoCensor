@@ -13,13 +13,8 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
 sys.path.insert(1, '../')
 from data_preprocess.config import dataset_class_params
 from models.classifier import mlp_classifier
-
-
 from utils import load_data_model, check_args
-
 from eval_utils import evaluate, store_representations
-
-
 
 import argparse
 if torch.cuda.is_available():
@@ -161,7 +156,5 @@ if __name__ == '__main__':
 
     if args.test:
         evaluate(args, info_model=False)
-        if args.dataset == 'utkface':
-            store_representations(args, info_model=False)
     else:
         main(args)
