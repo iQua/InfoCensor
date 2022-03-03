@@ -1,7 +1,7 @@
 # InfoCensor
 InfoCensor: An Information-Theoretic Framework against Sensitive Attribute Inference and Demographic Disparity
 
-This codebase is written on top of pytorch
+This codebase is written on top of pytorch (python3)
 
 Some required packages are listed in requirement.txt
 
@@ -37,4 +37,10 @@ python no_defense.py --dataset health --target-attr charlson --sensitive-attr ag
 
 ```commandline
 python no_defense.py --dataset utkface --num-epochs 100 --target-attr age --sensitive-attr race --use-cuda
+```
+
+### Examples for InfoCensor
+
+```commandline
+python infocensor.py --dataset health --target-attr charlson --sensitive-attr gender --info-lambda 0.5 --info-beta 0.0 --fair-kappa 0.5
 ```
