@@ -25,16 +25,16 @@ You also need torchtext (find the version that matches your torch version)
 python no_defense.py --dataset <dataset> --target-attr <the target attribute> --sensitive-attr <the sensitive attribute>
 ```
 
-### Examples:
+### Examples (If you do not have GPU, then do not use the argument --use-cuda):
 
 ```commandline
-python no_defense.py --dataset german --use-cuda --target-attr credit --sensitive-attr gender
+python no_defense.py --dataset german --target-attr credit --sensitive-attr gender
 ```
 
 ```commandline
-python no_defense.py --dataset health --use-cuda --target-attr charlson --sensitive-attr age
+python no_defense.py --dataset health --target-attr charlson --sensitive-attr age
 ```
 
 ```commandline
-python no_defense.py --use-cuda --dataset utkface --num-epochs 100 --target-attr age --sensitive-attr race
+python no_defense.py --dataset utkface --num-epochs 100 --target-attr age --sensitive-attr race --use-cuda
 ```
