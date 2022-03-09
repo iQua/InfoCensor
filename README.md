@@ -39,8 +39,27 @@ python no_defense.py --dataset health --target-attr charlson --sensitive-attr ag
 python no_defense.py --dataset utkface --num-epochs 100 --target-attr age --sensitive-attr race --use-cuda
 ```
 
-### Examples for InfoCensor
+### Examples for InfoCensor (It is better to add --use-cuda if you have a gpu)
 
 ```commandline
-python infocensor.py --dataset health --target-attr charlson --sensitive-attr gender --info-lambda 0.5 --info-beta 0.0 --fair-kappa 0.5
+python infocensor.py --dataset health --target-attr charlson --sensitive-attr age --info-lambda 0.5 --info-beta 0.0 --fair-kappa 0.5
+```
+
+
+## Attacks (code files are in the "attacks" directory)
+```commandline
+python baseline.py --dataset <health or utkface or twitter> --defense-method <adv_censor or info_censor> --defense-model-name <the model name (record certain hyperparameters) for the specific defense> --sensitive-attr <the sensitive attribute>
+```
+
+```commandline
+python decensor.py --defense-method <adv_censor or info_censor> --dataset <health or utkface>  --defense-model-name <the model name (record certain hyperparameters) for the specific defense> --sensitive-attr <the sensitive attribute>
+```
+
+### Examples (It is better to add --use-cuda if you have a gpu)
+```commandline
+python baseline.py --dataset health --defense-method no_defense --defense-model-name target_charlson_sensitive_age_num_features_128 --sensitive-attr age
+```
+
+```commandline
+python baseline.py --dataset health --defense-method infocensor --defense-model-name target_charlson_sensitive_age_num_features_128_lambda_0.5_beta_0.0_kappa_0.5 --sensitive-attr age
 ```
